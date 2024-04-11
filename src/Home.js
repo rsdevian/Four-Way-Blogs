@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const Home = () => {
+    // eslint-disable-next-line no-unused-vars
     const [blogs, setBlogs] = useState([
         {
             title: 'My New Website', body: 'lorem ipsum.....', id: 1
