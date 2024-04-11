@@ -13,8 +13,7 @@ const Home = () => {
     ])
     return ( 
         <div className="home">
-            <h2>HomePage</h2>
-            <Bloglist blogs={blogs}/>
+            <Bloglist blogs={blogs} title="All Blogs"/>
         </div> 
     );
 }
