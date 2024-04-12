@@ -101,3 +101,11 @@
   border-radius: 8px;
   cursor: pointer;
 }
+
+.Home {
+  background: #f1356d;
+  border-radius: 8px;
+  color: white;
+  margin: 20px;
+  padding: 10px;
+}
