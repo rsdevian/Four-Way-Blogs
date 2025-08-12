@@ -41,13 +41,12 @@ const Create = () => {
                     onChange={(e) => setBody(e.target.value)}
                 ></textarea>
                 <label>Blog Author: </label>
-                <select
+                <input
+                    type='text'
+                    required
                     value={author}
                     onChange={(e) => setAuthor(e.target.value)}
-                >
-                    <option value='Mario'>Mario</option>
-                    <option value='Liugi'>Liugi</option>
-                </select>
+                />
                 {!isLoading && <button>Add Blog</button>}
                 {isLoading && <button>Adding Blog...</button>}
             </form>
