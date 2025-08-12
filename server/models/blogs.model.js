@@ -6,7 +6,7 @@ const blogSchema = new Schema({
         required: [true, "Title is required"],
         minlength: [3, "Title must be at least 3 characters long"],
     },
-    description: {
+    body: {
         type: String,
         required: [true, "Description is required"],
         minlength: [3, "Description must be at least 3 characters long"],
@@ -18,6 +18,6 @@ const blogSchema = new Schema({
     },
 });
 
-const blogModel = model("Blog", blogSchema);
+const Blog = model("Blog", blogSchema);
 
-export default blogModel;
+export default Blog;
