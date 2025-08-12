@@ -27,4 +27,38 @@ async function createBlog(req, res) {
     }
 }
 
-export { getAllBlogs, createBlog };
+async function getBlogById(req, res) {
+    try {
+        const { id } = req.params;
+        const blog = await Blog.findById(id);
+        if (!blog) {
+            return res.status(404).json({ message: "Blog not found" });
+        }
+        res.status(200).json(blog);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            error: error.message,
+            message: "Internal Server Error",
+        });
+    }
+}
+
+async function deleteBlogById(req, res) {
+    try {
+        const { id } = req.params;
+        const blog = await Blog.findByIdAndDelete(id);
+        if (!blog) {
+            return res.status(404).json({ message: "Blog not found" });
+        }
+        res.status(200).json({ message: "Blog deleted successfully" });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            error: error.message,
+            message: "Internal Server Error",
+        });
+    }
+}
+
+export { getAllBlogs, createBlog, getBlogById, deleteBlogById };

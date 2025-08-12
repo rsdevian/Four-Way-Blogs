@@ -3,6 +3,7 @@ import {
     useParams,
 } from "react-router-dom/cjs/react-router-dom.min";
 import useFetch from "./useFetch";
+import { baseUrl } from "./url";
 
 const BlogDetails = () => {
     const { id } = useParams();
@@ -10,11 +11,11 @@ const BlogDetails = () => {
         data: blog,
         error,
         isLoading,
-    } = useFetch(`http://localhost:8000/blogs/${id}`);
+    } = useFetch(`${baseUrl}/api/blogs/${id}`);
     const history = useHistory();
 
     const handleClick = () => {
-        fetch(`http://localhost:8000/blogs/${blog.id}`, {
+        fetch(`${baseUrl}/api/blogs/${blog._id}`, {
             method: "DELETE",
         }).then(() => {
             history.push("/");
