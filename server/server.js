@@ -7,10 +7,11 @@ import { connectDB } from "./config/db.config.js";
 
 const app = express();
 const PORT = process.env.PORT;
+const allowOrigin = process.env.ALLOW_ORIGIN;
 
 config();
 
-app.use(cors({ origin: ["http://localhost:3000"] }));
+app.use(cors({ origin: [allowOrigin] }));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
